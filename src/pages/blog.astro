@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+const allPosts = await Astro.glob("../pages/posts/*.mdx");
+---
+
+<Layout title="Blog Home">
+  <p>this is the home page for the blog</p>
+  <p>all blogs will be show here</p>
+  <ul>
+    {
+      allPosts.map((post) => (
+        <li>
+          <a href={post.url}>{post.frontmatter.postTitle}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

@@ -1,0 +1,10 @@
+---
+import Layout from "./Layout.astro";
+const { postTitle, author } = Astro.props;
+---
+
+<Layout title={postTitle}>
+  <h1>{postTitle}</h1>
+  <p>{author}</p>
+  <slot />
+</Layout>
